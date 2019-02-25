@@ -19,17 +19,18 @@ export default function (id,
     total,
     card_number,
     card_type, 
+    order_country, 
     order_ip) {
 
     return `
-    <tr id="${id}">
+    <tr id="order_${id}">
         <td>${transaction_id}</td>
         <td class="user_data">${user_id}</td>
         <td>${created_at}</td>
         <td>$${total}</td>
         <td>${card_number}</td>
         <td>${card_type}</td>
-        <td>${order_ip}</td>
+        <td>${order_country} (${order_ip})</td>
     </tr>
     `
 }

@@ -6,16 +6,26 @@ import orders from '../data/orders.json';
 console.log (orders[1]);
 
 
-let el = orders.map(function(name) {
-  return template(name.id,
-      name.transaction_id, 
-        name.user_id,
-        name.created_at,
-        name.total,
-        name.card_number,
-        name.card_type, 
-        name.order_ip)
-});
+function cardNumberFormat(str){
+  return `${str.slice(0,3)}********${str.slice(10,14)}`
+}
+
+function dateFormat(str){
+  return `${new Date(str*1000).toLocaleDateString("en-US")} ${new Date(1513808027*1000).toLocaleTimeString("en-US")}`
+}
+
+
+let el = orders.reduce(function(sum, current) {
+  return sum + template(current.id,
+      current.transaction_id, 
+        current.user_id,
+        dateFormat(current.created_at),
+        current.total,
+        cardNumberFormat(current.card_number),
+        current.card_type,
+        current.order_country, 
+        current.order_ip)
+}, '');
 
 
 
