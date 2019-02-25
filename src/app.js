@@ -5,7 +5,7 @@ import Table from './table';
 
 import TableTr from './tableTr';
 
-console.log(orders);
+// console.log(orders);
 
 export default (function () {
     // YOUR CODE GOES HERE
