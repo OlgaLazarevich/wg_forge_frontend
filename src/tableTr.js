@@ -3,7 +3,9 @@ import template from './tableTr.template.js';
 
 import orders from '../data/orders.json';
 
-console.log (orders[1]);
+import users from '../data/users.json';
+
+
 
 
 function cardNumberFormat(str){
@@ -14,11 +16,32 @@ function dateFormat(str){
   return `${new Date(str*1000).toLocaleDateString("en-US")} ${new Date(1513808027*1000).toLocaleTimeString("en-US")}`
 }
 
+function getUserInfo(id){
+  let user = users.filter(function(item) {
+
+    if ( item.id === id == true) return item.id
+    else return
+
+  });
+
+  let gender = (gender) => {
+
+    return gender === "Female"? "Ms." : "Mr."
+  }
+
+  console.log(gender());
+   
+  return `${gender(user[0].gender)} ${user[0].first_name} ${user[0].last_name}`
+}
+
+
+console.log(getUserInfo(20));
+
 
 let el = orders.reduce(function(sum, current) {
   return sum + template(current.id,
       current.transaction_id, 
-        current.user_id,
+      getUserInfo(current.user_id),
         dateFormat(current.created_at),
         current.total,
         cardNumberFormat(current.card_number),
