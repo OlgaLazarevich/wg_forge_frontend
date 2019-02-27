@@ -1,14 +1,6 @@
-// export default `
-// <tr id="order_11">
-//     <td>8292e007-4682-idkfa-a404-eed9662fa5cc</td>
-//     <td class="user_data">15</td>
-//     <td>21/12/2017, 1:13:47 AM</td>
-//     <td>$453.47</td>
-//     <td>30********4733</td>
-//     <td>diners-club-carte-blanche</td>
-//     <td>IS (211.145.96.59)<td>
-// </tr>
-// `;
+import TableTr from './tableTr';
+
+
 
 
 
