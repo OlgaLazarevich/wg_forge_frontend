@@ -19,7 +19,7 @@ export default function (id,
         <td>${transaction_id}</td>
         <td class="user_data"><a href="#">${user_id}</a></td>
         <td>${created_at}</td>
-        <td>$${total}</td>
+        <td>${total}</td>
         <td>${card_number}</td>
         <td>${card_type}</td>
         <td>${order_country} (${order_ip})</td>

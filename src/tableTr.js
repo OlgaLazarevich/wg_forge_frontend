@@ -50,11 +50,9 @@ function getUserInfo(id){
 
 
    
-  return `
-  ${getGender(user[0].gender)} 
-  ${user[0].first_name} 
-  ${user[0].last_name}
-  ${userDetailTemplate(user[0], company)}
+  return `<span>
+  ${getGender(user[0].gender)} </span><span class="user-name">${user[0].first_name} ${user[0].last_name}</span><span>
+  ${userDetailTemplate(user[0], company)}</span>
   `
 }
 
